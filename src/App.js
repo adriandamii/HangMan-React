@@ -1,25 +1,19 @@
-import logo from './logo.svg';
 import './App.css';
+import Word from './Word';
+import React, { useState } from 'react';
 
-function App() {
+export default function App() {
+  const [onStart, setOnStart] = useState(false);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main">
+      <h1>HANGMAN </h1>
+      {!onStart && 
+        <h5>Type a word and press start or start directly with a random word!</h5>
+      }
+      <div className='container-game'>
+        <Word onStart={onStart} setOnStart={setOnStart} />
+      </div>
     </div>
   );
 }
-
-export default App;
