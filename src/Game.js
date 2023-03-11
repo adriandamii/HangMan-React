@@ -96,7 +96,8 @@ export default function Game(props) {
       setWin(true);
       setDisable(true);
     }
-    if (lives === 1) {
+    
+    if (lives === 0) {
       setDisable(true);
     }
   }

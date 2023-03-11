@@ -14,7 +14,7 @@ import winHM from './hangman/winHangman.png';
 export default function Lives(props) {
   let hangArrImages = [];
   hangArrImages.push(hm0, hm1, hm2, hm3, hm4, hm5, hm6, hm7, hm8, hm9, hm10);
-
+  
   return (
     <div id="lives">
       {hangArrImages.map((hangNr, index) => {
