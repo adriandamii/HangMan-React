@@ -32,6 +32,7 @@ body {
   border: 1px solid black;
   color: #ab6161;
   font-weight: bold;
+  font-size: 30px;
   font-family: 'Courier New', Courier, monospace;
 }
 
@@ -52,21 +53,25 @@ body {
 
 input {
   width: 300px;
-  height: 25px;
+  height: 65px;
   margin-bottom: 10px;
   border-radius: 8px;
-  border: 1px solid black;
+  font-size: 36px;
+  font-family: 'Courier New', Courier, monospace;
+
 }
 
 #startButton, .restartButton {
   font-size: 16px;
   width: 200px;
-  height: 30px;
-  border: 1px solid black;
+  height: 80px;
+  border: 3px solid rgb(110, 60, 60);
   color: #ab6161;
   font-weight: bold;
-  border-radius:20px;
+  border-radius:10px;
+  font-size: 35px;
   font-family: 'Courier New', Courier, monospace;
+  letter-spacing:-0.6vh;
 }
 
 .startButtons {

@@ -4,7 +4,7 @@ import Keyboard from './Keyboard';
 import Lines from './Lines';
 
 export default function Game(props) {
-  const [lives, setLives] = useState(10);
+  const [lives, setLives] = useState(11);
   const [win, setWin] = useState(false);
   const [disable, setDisable] = useState(false);
 
@@ -92,14 +92,13 @@ export default function Game(props) {
       }
     }
 
-    if (win === 1 && lives > 0) {
+    if (win === 1 && lives >= 0 && disable === false) {
       setWin(true);
       setDisable(true);
     }
-
-    if (lives === 0) {
+    if (lives === 1 && win === 0 && disable === false) {
       setDisable(true);
-    }
+    } 
   }
 
   return (
