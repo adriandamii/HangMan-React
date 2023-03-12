@@ -1,6 +1,7 @@
 body {
   margin:0;
   text-align: center;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 #game {
@@ -30,32 +31,42 @@ body {
   height: 50px;
   border: 1px solid black;
   color: #ab6161;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
 }
+
 .hangman {
   width: 400px;
 }
 
 .lines {
-  font-size: 40px;
+  font-size: 30px;
   background-color: rgb(237, 244, 242);
+  margin:3px;
 }
 
 #gameOverWord {
   margin-top: 0px;
 }
 
+
 input {
   width: 300px;
   height: 25px;
   margin-bottom: 10px;
+  border-radius: 8px;
+  border: 1px solid black;
 }
 
-#startButton {
+#startButton, .restartButton {
   font-size: 16px;
   width: 200px;
   height: 30px;
   border: 1px solid black;
   color: #ab6161;
+  font-weight: bold;
+  border-radius:20px;
+  font-family: 'Courier New', Courier, monospace;
 }
 
 .startButtons {
@@ -67,14 +78,12 @@ input {
   gap: 10px;
 }
 
-.restartButton {
-  width: 200px;
-  border-radius: 10px;
-  background-color: rgb(191, 57, 57);
-}
-
 #win {
   color: green;
+}
+
+h1 { 
+  color: #ab6161;
 }
 
 h5 {
@@ -83,6 +92,20 @@ h5 {
 
 .container-game, #game{
   width:100%;
+}
+
+.icon {
+  position:relative;
+  margin:0 5px 0 0;
+  font-size:20px;
+}
+.alert-empty-input {
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  color:#ab6161;
+  font-size: small;
+  font-weight: bold;
 }
 
 @media only screen and (min-device-width: 280px) and (max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2) {
@@ -99,11 +122,22 @@ h5 {
     font-size: 25px;
     border: 1px solid black;
     color: #ab6161;
+    padding:auto;
   }
   .hangman {
     width:100%;
   }
   .hidden-word {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     width:100%;
+  }
+
+  .lines{
+    margin-right:0;
+  }
+  input {
+    width:90%;
   }
 }

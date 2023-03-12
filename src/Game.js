@@ -44,13 +44,13 @@ export default function Game(props) {
 
   if (randomBool === false) {
     for (let i = 0; i < inputValue.length; ++i) {
-      arrLines.push({ id: i, line: ' _ ', letter: inputValue[i] });
+      arrLines.push({ id: i, line: '_', letter: inputValue[i] });
     }
   }
 
   if (randomBool === true) {
     for (let i = 0; i < randomWord.length; ++i) {
-      arrLines.push({ id: i, line: ' _ ', letter: randomWord[i] });
+      arrLines.push({ id: i, line: '_', letter: randomWord[i] });
     }
   }
 
@@ -77,7 +77,7 @@ export default function Game(props) {
     if (randomBool === false) {
       for (let i = 0; i < inputValue.length; ++i) {
         let line = document.getElementsByClassName('lines')[i].textContent;
-        if (line === ' _ ') {
+        if (line === '_') {
           win = 0;
         }
       }
@@ -86,7 +86,7 @@ export default function Game(props) {
     if (randomBool === true) {
       for (let i = 0; i < randomWord.length; ++i) {
         let line = document.getElementsByClassName('lines')[i].textContent;
-        if (line === ' _ ') {
+        if (line === '_') {
           win = 0;
         }
       }
@@ -96,7 +96,7 @@ export default function Game(props) {
       setWin(true);
       setDisable(true);
     }
-    
+
     if (lives === 0) {
       setDisable(true);
     }
