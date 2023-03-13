@@ -4,7 +4,7 @@ import Keyboard from './Keyboard';
 import Lines from './Lines';
 
 export default function Game(props) {
-  const [lives, setLives] = useState(11);
+  const [lives, setLives] = useState(10);
   const [win, setWin] = useState(false);
   const [disable, setDisable] = useState(false);
 
@@ -56,23 +56,19 @@ export default function Game(props) {
 
   function checkLetter(e) {
     let pressedButton = document.getElementById(e.currentTarget.id);
-    let decrementAux = 0;
     pressedButton.style.backgroundColor = '#AB6161';
     pressedButton.style.color = 'white';
     pressedButton.setAttribute('disabled', 'true');
-
+    
+    let checkWrong = 1;
     arrLines.forEach((line) => {
       if (line.letter === e.currentTarget.value) {
         let lines = document.getElementsByTagName('span')[line.id];
         lines.textContent = e.currentTarget.value;
-        ++decrementAux;
-      }
+        checkWrong = 0;
+      } 
     });
-
-    if (decrementAux === 0 && lives > 0) {
-      setLives(lives - 1);
-    }
-
+    
     let win = 1;
     if (randomBool === false) {
       for (let i = 0; i < inputValue.length; ++i) {
@@ -91,16 +87,20 @@ export default function Game(props) {
         }
       }
     }
-
-    if (win === 1 && lives >= 0 && disable === false) {
+    
+    if (checkWrong === 1 && lives > 0) {
+      setLives(lives - 1);
+      if (lives === 1) {
+        setDisable(true);
+      }
+    }
+    
+    if (win === 1 && lives > 0) {
       setWin(true);
       setDisable(true);
     }
-    if (lives === 1 && win === 0 && disable === false) {
-      setDisable(true);
-    } 
+    
   }
-
   return (
     <div id="game">
       <Keyboard

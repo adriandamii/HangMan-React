@@ -39,10 +39,9 @@ export default function Word(props) {
     }
   }
 
-  
-
+  // eslint-disable-next-line
   const randomWord = JSON.stringify(apiWord).replace(/[\[\]"']+/g, '');
-
+  
   return (
     <>
         {!onStart ? (
@@ -54,7 +53,7 @@ export default function Word(props) {
               }}
               style={{ textTransform: 'uppercase' }}
             />
-            {alertEmptyInput && <p className='alert-empty-input'><FiAlertTriangle className='icon'/>Please, type a word first!</p>}
+            {alertEmptyInput && <p className='alert-empty-input'><FiAlertTriangle className='icon'/>Type a word, or get a random one!</p>}
           </>
         ) : null}
       <div className="startButtons">
@@ -65,6 +64,7 @@ export default function Word(props) {
         ) : null}
         {!onStart ? (
           <>
+          <h5 className='random'>Get a random word!</h5>
             <button
               id="startButton"
               onClick={() => {

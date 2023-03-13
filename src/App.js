@@ -9,7 +9,7 @@ export default function App() {
     <div className="main">
       <h1>HANGMAN </h1>
       {!onStart && 
-        <h5>Type a word and press start or start directly with a random word!</h5>
+        <h5>Type a word and start, then pass it to a close friend!</h5>
       }
       <div className='container-game'>
         <Word onStart={onStart} setOnStart={setOnStart} />

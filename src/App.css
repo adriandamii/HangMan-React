@@ -63,13 +63,13 @@ input {
 
 #startButton, .restartButton {
   font-size: 16px;
-  width: 200px;
-  height: 80px;
+  width: 230px;
+  height: fit-content;
   border: 3px solid rgb(110, 60, 60);
   color: #ab6161;
   font-weight: bold;
   border-radius:10px;
-  font-size: 35px;
+  font-size: 40px;
   font-family: 'Courier New', Courier, monospace;
   letter-spacing:-0.6vh;
 }
@@ -91,8 +91,14 @@ h1 {
   color: #ab6161;
 }
 
-h5 {
+h5, p {
   margin-bottom: 5px;
+  font-size: medium;
+  letter-spacing:-0.4vh;
+}
+
+.random {
+  margin-bottom:-5px;
 }
 
 .container-game, #game{
@@ -101,7 +107,7 @@ h5 {
 
 .icon {
   position:relative;
-  margin:0 5px 0 0;
+  margin:0 3px 0 0;
   font-size:20px;
 }
 .alert-empty-input {
