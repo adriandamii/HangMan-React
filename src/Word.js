@@ -46,6 +46,7 @@ export default function Word(props) {
     <>
         {!onStart ? (
           <>
+          <div className='input-group'>
           <label for='word'>Type a word and start, then pass it to a close friend!</label>
             <input
               value={inputValue}
@@ -54,7 +55,8 @@ export default function Word(props) {
               }}
               style={{ textTransform: 'uppercase' }}
               id="word"
-            />
+              />
+              </div>
             {alertEmptyInput && <p className='alert-empty-input'><FiAlertTriangle className='icon'/>Type a word, or get a random one!</p>}
           </>
         ) : null}

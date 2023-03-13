@@ -49,7 +49,11 @@ body {
 #gameOverWord {
   margin-top: 0px;
 }
-
+.input-group {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
 
 input {
   width: 300px;
@@ -58,7 +62,7 @@ input {
   border-radius: 8px;
   font-size: 36px;
   font-family: 'Courier New', Courier, monospace;
-
+  margin:0  auto 8px;
 }
 
 .startButton, .restartButton {
