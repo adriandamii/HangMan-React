@@ -46,27 +46,29 @@ export default function Word(props) {
     <>
         {!onStart ? (
           <>
+          <label for='word'>Type a word and start, then pass it to a close friend!</label>
             <input
               value={inputValue}
               onChange={(e) => {
                 setInputValue(e.target.value);
               }}
               style={{ textTransform: 'uppercase' }}
+              id="word"
             />
             {alertEmptyInput && <p className='alert-empty-input'><FiAlertTriangle className='icon'/>Type a word, or get a random one!</p>}
           </>
         ) : null}
       <div className="startButtons">
         {!onStart ? (
-          <button id="startButton" onClick={handleStart}>
+          <button className="startButton" onClick={handleStart}>
             Start
           </button>
         ) : null}
         {!onStart ? (
           <>
-          <h5 className='random'>Get a random word!</h5>
+          <p className='random'>Get a random word!</p>
             <button
-              id="startButton"
+              className="startButton"
               onClick={() => {
                 props.setOnStart(true);
                 setRandomBool(true);

@@ -8,9 +8,9 @@ export default function App() {
   return (
     <div className="main">
       <h1>HANGMAN </h1>
-      {!onStart && 
-        <h5>Type a word and start, then pass it to a close friend!</h5>
-      }
+      {/* {!onStart && 
+        <p></p>
+      } */}
       <div className='container-game'>
         <Word onStart={onStart} setOnStart={setOnStart} />
       </div>
